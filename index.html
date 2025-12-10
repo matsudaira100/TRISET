@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>TRISET2</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <div id="container">
+
+    <div class="side-panel" id="left-panel">
+      <div id="score-display">スコア: 0</div>
+      <div id="score-delta" class="score-delta"></div>
+      <div id="bonus-feed" class="bonus-feed"></div>
+      <div id="controls-info">
+        <h2>操作方法</h2>
+        <ul>
+          <li class="control-item">左移動 <span class="key">d</span><span class="key-separator">or</span><span class="key">⇦</span></li>
+          <li class="control-item">右移動 <span class="key">f</span><span class="key-separator">or</span><span class="key">⇨</span></li>
+          <li class="control-item">回転 <span class="key">j</span><span class="key-separator">or</span><span class="key">⇧</span></li>
+          <li class="control-item">ソフトドロップ（長押し） <span class="key">Space</span></li>
+          <li class="control-item">ハードドロップ <span class="key">Enter</span></li>
+          <li class="control-item">リセット / リスタート <span class="key">Esc</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="game-area">
+      <svg id="game-board" width="250" height="500"></svg>
+      <div id="overlay"></div>
+    </div>
+
+    <div class="side-panel" id="right-panel">
+      <div id="timer-display" class="timer-display"></div>
+      <div id="preview-container">
+        <svg id="preview-box-1" class="preview-box" width="140" height="140" viewBox="0 0 140 140"></svg>
+        <svg id="preview-box-2" class="preview-box" width="140" height="140" viewBox="0 0 140 140"></svg>
+      </div>
+      <div id="word-set-selector">
+        <div class="word-set-title">WORD LIST</div>
+        <div id="word-set-name" class="word-set-name">classic</div>
+        <div class="word-set-hint">⇦ / ⇨ で切替</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
