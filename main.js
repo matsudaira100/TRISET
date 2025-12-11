@@ -41,7 +41,14 @@ const AVAILABLE_WORD_SETS = [
   "colors",
   "verbs",
   "fruit",
-  "conjunctions"
+  "conjunctions",
+  "NSGL1",
+  "NSGL2",
+  "NSGL3",
+  "NSGL4",
+  "NSGL5",
+  "NSGL6",
+  "NSGL7"
 ];
 
 const WORD_SET_LABELS = {
@@ -53,6 +60,13 @@ const WORD_SET_LABELS = {
   colors: "colors (色)",
   verbs: "verbs (動詞)",
   fruit: "fruit (果物)",
+  NSGL1: "NSGL1 (使用レベル1)",
+  NSGL2: "NSGL2 (使用レベル2)",
+  NSGL3: "NSGL3 (使用レベル3)",
+  NSGL4: "NSGL4 (使用レベル4)",
+  NSGL5: "NSGL5 (使用レベル5)",
+  NSGL6: "NSGL6 (使用レベル6)",
+  NSGL7: "NSGL7 (使用レベル7)",
   conjunctions: "conjunctions (接続詞)"
 };
 
