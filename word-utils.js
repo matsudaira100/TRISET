@@ -1,4 +1,4 @@
-﻿import { WORD_SETS } from "./word.js";
+import { WORD_SETS } from "./word.js";
 
 const DEFAULT_BLOCK_TYPES = ["1", "2", "3", "4", "L", "J", "Z", "S", "T", "U", "O", "V"];
 const NGSL_KEYS = ["NGSL1", "NGSL2", "NGSL3", "NGSL4", "NGSL5", "NGSL6", "NGSL7"];
@@ -36,10 +36,14 @@ function buildLengthFilteredSet(min, max) {
   return result;
 }
 
-WORD_SETS.short = buildLengthFilteredSet(1, 3);
-WORD_SETS.medium = buildLengthFilteredSet(4, 6);
-WORD_SETS.long = buildLengthFilteredSet(7, 9);
-WORD_SETS.extraLong = buildLengthFilteredSet(10, 14);
+function ensureGeneratedWordSets() {
+  WORD_SETS.short = WORD_SETS.short ?? buildLengthFilteredSet(1, 3);
+  WORD_SETS.medium = WORD_SETS.medium ?? buildLengthFilteredSet(4, 6);
+  WORD_SETS.long = WORD_SETS.long ?? buildLengthFilteredSet(7, 9);
+  WORD_SETS.extraLong = WORD_SETS.extraLong ?? buildLengthFilteredSet(10, 14);
+}
+
+ensureGeneratedWordSets();
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -51,6 +55,8 @@ function shuffle(array) {
 export function getWordSetNames() {
   return Object.keys(WORD_SETS);
 }
+
+export { ensureGeneratedWordSets };
 
 export function getRandomWordSet(countOrName = DEFAULT_BLOCK_TYPES.length, maybeName) {
   let count = DEFAULT_BLOCK_TYPES.length;
