@@ -1,6 +1,7 @@
 ﻿import { WORD_SETS } from "./word.js";
 
 const DEFAULT_BLOCK_TYPES = ["1", "2", "3", "4", "L", "J", "Z", "S", "T", "U", "O", "V"];
+const NGSL_KEYS = ["NGSL1", "NGSL2", "NGSL3", "NGSL4", "NGSL5", "NGSL6", "NGSL7"];
 
 function normalizeWord(entry) {
   if (typeof entry === "string") {
@@ -16,6 +17,29 @@ function cloneWord(entry) {
   const normalized = normalizeWord(entry);
   return { en: (normalized.en ?? "").toLowerCase(), ja: normalized.ja };
 }
+
+function buildLengthFilteredSet(min, max) {
+  const seen = new Set();
+  const result = [];
+  for (const key of NGSL_KEYS) {
+    const list = WORD_SETS[key] ?? [];
+    for (const entry of list) {
+      const normalized = normalizeWord(entry);
+      const en = (normalized.en ?? "").toLowerCase();
+      if (!en) continue;
+      if (en.length < min || en.length > max) continue;
+      if (seen.has(en)) continue;
+      seen.add(en);
+      result.push({ en, ja: normalized.ja });
+    }
+  }
+  return result;
+}
+
+WORD_SETS.short = buildLengthFilteredSet(1, 3);
+WORD_SETS.medium = buildLengthFilteredSet(4, 6);
+WORD_SETS.long = buildLengthFilteredSet(7, 9);
+WORD_SETS.extraLong = buildLengthFilteredSet(10, 14);
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {

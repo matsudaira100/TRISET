@@ -74,9 +74,10 @@
     { en: "eleven", ja: "11" },
     { en: "twelve", ja: "12" },
     { en: "thirteen", ja: "13" },
+    { en: "fifty", ja: "50" },
     { en: "hundred", ja: "100" },
-    { en: "thousand", ja: "1000" },
-    { en: "million", ja: "1000000" }
+    { en: "thousand", ja: "1,000" },
+    { en: "million", ja: "1,000,000" }
   ],
   colors: [
     { en: "red", ja: "赤" },
@@ -134,7 +135,7 @@
     { en: "while", ja: "〜している間に" },
     { en: "until", ja: "〜までずっと" }
   ],
-  NSGL1: [
+  NGSL1: [
     { en: "the", ja: "その" },
     { en: "be", ja: "なれ" },
     { en: "and", ja: "そして" },
@@ -536,7 +537,7 @@
     { en: "policy", ja: "ポリシー" },
     { en: "further", ja: "さらに遠く" },
   ],
-  NSGL2: [
+  NGSL2: [
     { en: "body", ja: "体" },
     { en: "require", ja: "必要とする" },
     { en: "wait", ja: "待って" },
@@ -938,7 +939,7 @@
     { en: "pull", ja: "引く" },
     { en: "red", ja: "赤" },
   ],
-  NSGL3: [
+  NGSL3: [
     { en: "husband", ja: "夫" },
     { en: "access", ja: "アクセス" },
     { en: "movement", ja: "動き" },
@@ -1340,7 +1341,7 @@
     { en: "scale", ja: "規模" },
     { en: "driver", ja: "ドライバ" },
   ],
-  NSGL4: [
+  NGSL4: [
     { en: "ball", ja: "ボール" },
     { en: "cry", ja: "泣く" },
     { en: "introduction", ja: "導入" },
@@ -1742,7 +1743,7 @@
     { en: "tea", ja: "お茶" },
     { en: "lovely", ja: "素敵な" },
   ],
-  NSGL5: [
+  NGSL5: [
     { en: "soft", ja: "柔らかい" },
     { en: "row", ja: "行" },
     { en: "youth", ja: "若者" },
@@ -2144,7 +2145,7 @@
     { en: "storm", ja: "嵐" },
     { en: "thick", ja: "厚い" },
   ],
-  NSGL6: [
+  NGSL6: [
     { en: "achievement", ja: "成果" },
     { en: "negotiate", ja: "交渉する" },
     { en: "dominate", ja: "支配する" },
@@ -2546,7 +2547,7 @@
     { en: "correspond", ja: "対応する" },
     { en: "stroke", ja: "脳卒中" },
   ],
-  NSGL7: [
+  NGSL7: [
     { en: "dare", ja: "敢えて" },
     { en: "barrier", ja: "バリア" },
     { en: "rid", ja: "取り除く" },
