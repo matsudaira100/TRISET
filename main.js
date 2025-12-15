@@ -1,4 +1,4 @@
-﻿// main.js
+// main.js
 
 import { drawGrid, createBlock, updateBlockPosition } from './grid.js';
 
@@ -6,7 +6,7 @@ import { showMessage, clearMessage, setupScoreDisplay, updateScore, renderNextBl
 
 import { canMove, lockBlock, clearFullRows } from './utils.js';
 
-import { buildWordMap, getRandomWordSet, getWordSetNames } from './word-utils.js';
+import { buildWordMap, getRandomWordSet, getWordSetNames, ensureGeneratedWordSets } from './word-utils.js';
 
 
 
@@ -112,6 +112,7 @@ let selectedWordSetIndex = Math.max(
   AVAILABLE_WORD_SETS.indexOf(DEFAULT_WORD_SET)
 );
 let blockWordMap = {};
+ensureGeneratedWordSets();
 
 
 let grid = Array.from({ length: rows }, () => Array(cols).fill(false));
@@ -205,12 +206,13 @@ function getWordSetLabel(key) {
   return WORD_SET_LABELS[key] ?? key;
 }
 
+const STAR = "\u2605";
 function getWordSetDifficulty(key) {
-  if (["1", "2", "3", "alphabet"].includes(key)) return "★";
-  if (["numbers", "colors", "verbs", "fruit", "conjunctions", "short"].includes(key)) return "★★";
-  if (["medium", "NGSL1", "NGSL2", "NGSL3"].includes(key)) return "★★★";
-  if (["NGSL4", "NGSL5", "NGSL6", "NGSL7", "long"].includes(key)) return "★★★★";
-  if (["extraLong"].includes(key)) return "★★★★★";
+  if (["1", "2", "3", "alphabet"].includes(key)) return STAR;
+  if (["numbers", "colors", "verbs", "fruit", "conjunctions", "short"].includes(key)) return STAR.repeat(2);
+  if (["medium", "NGSL1", "NGSL2", "NGSL3"].includes(key)) return STAR.repeat(3);
+  if (["NGSL4", "NGSL5", "NGSL6", "NGSL7", "long"].includes(key)) return STAR.repeat(4);
+  if (["extraLong"].includes(key)) return STAR.repeat(5);
   return "";
 }
 
@@ -1101,7 +1103,6 @@ export function setWordSet(name) {
 
 prepareStartScreen();
 updateWordSetDisplay();
-
 
 
 
